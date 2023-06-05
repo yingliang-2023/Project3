@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-require('./models/inventory.model.js');
+require('./app/models/inventory.model.js');
 
 require('dotenv').config();
 const mongoose = require('mongoose');
@@ -21,7 +21,7 @@ mongoose.connection
 });
 
 
-require('./routes/inventory.router.js')(app);
+require('./app/routes/inventory.router.js')(app);
 
 const server= app.listen(8080, function(){
     const host = server.address().address
