@@ -23,11 +23,11 @@ class InventoryList extends Component {
     }
 
     removeInv = async(id)=>{
-        await fetch(`api/inventory/${id}`,{
+        await fetch(`/api/inventory/${id}`,{
             method:"DELETE",
             headers:{
                 'Accept': 'application/json',
-                'Content-Type': "application/json"
+                'Content-Type': 'application/json'
             }
         })
         console.log("Remove Done!");
@@ -43,12 +43,11 @@ class InventoryList extends Component {
     render() {
         const {inventories,isLoading} = this.state;
 
-        if(isLoading){
-            return <p>Loading</p>
-        }
-
-        const inventoryList = inventories.map(inventory=>{
-            return <tr key={inventory._id}>
+        // if(isLoading){
+        //     return <p>Loading</p>
+        // }
+            const inventoryList = inventories.map(inventory=>{
+                 return <tr key={inventory._id}>
                         <td style={{whiteSpace:'nowrap'}}>{inventory.prodname}</td>
                         <td >{inventory.qty}</td>
                         <td >{inventory.price}</td>
@@ -70,8 +69,10 @@ class InventoryList extends Component {
                             >Delete</Button>
                         </ButtonGroup>
                         </td>
-            </tr>
-        })
+                     </tr>
+    })
+
+    
         return (
             <div>
                 <AppNavbar/>
@@ -105,7 +106,6 @@ class InventoryList extends Component {
                     </Table>
                 </Container>
             </div>
-
         )
     };
 };
