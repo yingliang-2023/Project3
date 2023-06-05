@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+// import { withRouter } from "react-router";
 import {Button,Container,Form, FormGroup,Input,Label} from 'reactstrap';
 import AppNavbar from './Navbar';
 import {Link} from 'react-router-dom';
@@ -20,11 +21,12 @@ class InventoryEdit extends Component {
     }
 
     async componentDidMount(){
-        if (this.props.match.params.id !=='new'){
-            const inventory=
-            await (await fetch (`/api/inventory/${this.props.match.params.id}`)).json();
-            this.setState({item:inventory});
-        }
+       console.log(this.state);
+        // if (this.props.match.params.id!=='new'){
+        //     const inventory=
+        //     await (await fetch (`/api/inventory/${this.props.match.params.id}`)).json();
+        //     this.setState({item:inventory});
+        // }
     }
 
     handleChange =(event)=>{
@@ -36,11 +38,11 @@ class InventoryEdit extends Component {
         this.setState({item});
     }
 
-    handleSubmit =(event)=>{
+    handleSubmit =async(event)=>{
         event.preventDefault();
         const {item} = this.state;
 
-         fetch('/api/inventory',{
+         await fetch('/api/inventory',{
             method:(item._id)?'PUT':'POST',
             headers:{
                 "Accept": "application/json",
@@ -62,7 +64,7 @@ class InventoryEdit extends Component {
                 <AppNavbar/>
                 <Container>
                     {title}
-                    <Form onsubmit={this.handleSubmit}>
+                    <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
                             <Label for ="prodname" className="h5 mt-3">Product Name</Label>
                             <Input 
@@ -126,8 +128,6 @@ class InventoryEdit extends Component {
             </div>
          )
     }
-
-
 
 
 }
