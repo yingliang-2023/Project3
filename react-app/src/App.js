@@ -14,7 +14,7 @@ class App extends Component {
         <Routes>
           <Route path='/' exact element = {<Home />} />
           <Route path='/inventories' exact element = {<InventoryList />} />
-          <Route path='/inventories/:id' element = {<InventoryEdit />} />
+          <Route path='/inventories/:id' element = {<InventoryEdit  />}  />
         </Routes>
       </Router>
     )
