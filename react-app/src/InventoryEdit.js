@@ -54,7 +54,7 @@ class InventoryEdit extends Component {
       },
       body: JSON.stringify(item),
     });
-    //this.props.history.push('/inventories');
+ 
     this.props.navigation("/inventories");
   };
 
