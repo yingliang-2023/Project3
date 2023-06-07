@@ -24,7 +24,6 @@ class InventoryEdit extends Component {
   }
 
   async componentDidMount() {
-    //if (this.props.match.params.id !== 'new') {
 
     let { id } = this.props.params;
     if (id !== "new") {

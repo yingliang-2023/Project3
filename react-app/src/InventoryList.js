@@ -21,6 +21,7 @@ class InventoryList extends Component {
   }
 
   removeInv = async (id) => {
+    console.log(id);
     await fetch(`/api/inventory/${id}`, {
       method: 'DELETE',
       headers: {
