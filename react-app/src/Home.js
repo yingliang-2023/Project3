@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import AppNavbar from './Navbar';
-import {Link} from 'react-router-dom';
-import {Button, Container} from 'reactstrap';
+import {Container} from 'reactstrap';
+import Signup from './Signup';
+import Login from './Login';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -9,16 +9,16 @@ import './App.css';
 class Home extends Component {
     render() {
         return (
-            <div>
-                <AppNavbar/>
+            <div className='main-body'>
+               
                 <Container fluid>
-                    <Button className='m-5 nav bg-light'>
-                        <Link 
-                            to="/inventories"
-                            className='nav-link'
-                        > Manage Inventory List</Link>
-                    </Button>
+                    <Signup /> 
                 </Container>
+
+                <Container fluid>
+                    <Login/>
+                </Container>
+
             </div>
         )
     }

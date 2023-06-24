@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kablammo&family=Pacifico&family=Ubuntu:wght@500&display=swap');
+
 .App {
   text-align: center;
 }
@@ -24,6 +26,9 @@
   color: white;
 }
 
+a{
+  text-decoration: none;
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +40,89 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.navbar{
+  background-color: rgb(175, 238, 75);
+  height: 180px;
+  font-size: 45px;
+  justify-content: center;
+  padding: auto;
+  font-family: 'Kablammo', serif;
+}
+
+#headline{
+  font-family:'Pacifico', cursive;
+  color:rgb(196, 116, 180);
+  font-weight: bold;
+}
+
+
+.small-btn{
+  background-color: aqua;
+  color:blue;
+  font-family:'Caveat', cursive;
+  font-size: 19px;
+  margin-top:15px;
+}
+
+
+.welcome{
+  color:brown;
+  margin:20px auto;
+  justify-content: center;
+
+}
+.signup, .login{
+  background-color: cadetblue;
+  margin:20px auto;
+  text-align: center;
+  height: 250px;
+  padding-top: 39px;
+  font-family:'Caveat', cursive ;
+}
+
+.signup label, .login label{
+  font-size: 25px;
+}
+.main-body{
+  background-color: aquamarine;
+
+  padding: 20px;
+}
+
+input{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.item-edit input, item-list input{
+  width: 300px;
+  margin: auto;
+
+}
+
+.item-edit, item-list{
+  text-align: center;
+}
+
+tr{
+  background-color: rgba(227, 23, 135, 0.722);
+  margin:10px 10px;
+  padding: 10px 10px;
+}
+
+th,td{
+  margin:10px 10px;
+  padding: 10px 10px;
+}
+
+table{
+  margin: auto;
+  padding:20px;
+}
+
+th{
+  background-color: rgb(236, 156, 233);
 }
