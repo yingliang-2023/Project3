@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-require('./app/models/inventory.model.js');
+const jwt=require('jsonwebtoken');
+const JWT_SECRET='secret';
+const bcrypt=require('bcryptjs');
+
+require('./app/models/item.model.js');
+require('./app/models/user.model.js');
 
 require('dotenv').config();
 const mongoose = require('mongoose');
@@ -21,7 +26,7 @@ mongoose.connection
 });
 
 
-require('./app/routes/inventory.router.js')(app);
+require('./app/routes/item.router.js')(app);
 
 const server= app.listen(8080, function(){
     const host = server.address().address
