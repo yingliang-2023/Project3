@@ -11,6 +11,12 @@ import './App.css';
 
 
 class App extends Component {
+
+  logOut=()=>{
+    window.localStorage.clear();
+    alert('You left your closet!');
+  }
+
   render() {
     return (
       <Router>
@@ -19,10 +25,10 @@ class App extends Component {
       <Link to="/"> Home </Link>
       <Link  id="headline"> 
       <FontAwesomeIcon icon={faShirt} bounce/>
-      {"    "} {"    "}My Digital Closet  {"    "} {"    "} 
+      {"    "} {"    "}<h1 id="headline_h1">My Digital Closet </h1> {"    "} {"    "} 
       <FontAwesomeIcon icon={faHatCowboy} bounce />
       </Link>
-      <Link to = '/'>Leave</Link>
+      <Link to = '/' onClick={this.logOut}>Leave</Link>
       </Navbar>
 
 

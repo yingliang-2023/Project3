@@ -35,9 +35,10 @@ exports.authenticate = async(req,res) => {
   var user= await User.find({username:req.body.username});
  
 
-  // if (!user) {
-  //    return res.json({error:"user not found!"})
-  //   };
+  if (!user) {
+    //  return res.json({error:"user not found!"})
+    alert("User not found");
+    };
    
     console.log(user[0]);
    var user=user[0];

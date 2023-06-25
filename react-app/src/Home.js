@@ -12,7 +12,7 @@ class Home extends Component {
             <div className='main-body'>
                
                 <Container fluid>
-                    <Signup /> 
+                    <Signup/> 
                 </Container>
 
                 <Container fluid>

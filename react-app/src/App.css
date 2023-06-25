@@ -58,7 +58,9 @@ a{
   font-weight: bold;
 }
 
-
+#headline_h1{
+  display: inline;
+}
 .small-btn{
   background-color: aqua;
   color:blue;

@@ -38,13 +38,17 @@ class Signup extends Component {
             body: JSON.stringify({username,password})
         })
         .then((res) => res.json())
-        .then(() =>alert("Congratulation, you've become user of digital closet!"));
+        .then(() =>{
+            alert("Congratulation, you've become user of digital closet!");
+            document.getElementById("signbox").style.display = 'none';
+        
+        });
             };
         
 
         render() {
             return(
-                <div className="signup">
+                <div className="signup"  id="signbox">
                 <h1>Please Create Your Account</h1>
 
                 <form onSubmit={this.handleSubmit} class=""  method="post"> 

@@ -28,9 +28,12 @@ handleSubmit(e){
         .then((data) =>{
             console.log(data,"UserRegister")
             if(data.status==="ok"){
+                var uu=document.getElementById("headline_h1")
+                uu.innerHTML ="hello"
                 alert("success!");
-                // window.localStorage("token",data.data);
+                window.localStorage.setItem("token",data.data);
                 window.location.href = "/items";
+                
             }
         });
     console.log(username,password);

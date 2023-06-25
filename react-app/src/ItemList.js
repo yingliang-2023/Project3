@@ -9,7 +9,8 @@ class ItemList extends Component {
     super(props);
     this.state = {
       items: [], 
-      isLoading: true
+      isLoading: true,
+      username: '',
     };
   }
 
@@ -19,7 +20,10 @@ class ItemList extends Component {
     fetch('/api/items')
       .then(response => response.json())
       .then(data => this.setState({items: data, isLoading: false}));
+
   }
+
+  
 
   removeItm = async (id) => {
     console.log(id);
